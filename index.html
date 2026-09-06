@@ -240,7 +240,12 @@ function viewProducts() {
         behavior: "smooth"
     });
 }
-
+function viewContent(productName) {
+    fbq('track', 'ViewContent', {
+        content_name: productName,
+        content_type: 'product'
+    });
+}
 function addToCart(productName) {
     alert(productName + " added to cart!");
 }
