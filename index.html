@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenvora — Luxury Fragrances</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f5f2;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #191919, #5c5145);
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #111;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .products {
+            padding: 70px 8%;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .product {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            height: 260px;
+            background: linear-gradient(135deg, #222, #777);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ZENVORA</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Perfumes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Luxury In Every Drop</h1>
+        <p>Discover your signature fragrance with Zenvora.</p>
+        <button class="btn" onclick="viewProducts()">Shop Now</button>
+    </div>
+</section>
+
+<section class="products" id="products">
+
+    <h2>Our Signature Collection</h2>
+
+    <div class="product-grid">
+
+        <div class="product">
+            <div class="product-image">
+                ZENVORA NOIR
+            </div>
+
+            <h3>Zenvora Noir</h3>
+            <p>Bold, dark and unforgettable.</p>
+
+            <div class="price">$49</div>
+
+            <button class="btn" onclick="addToCart('Zenvora Noir')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                ZENVORA ELITE
+            </div>
+
+            <h3>Zenvora Elite</h3>
+            <p>Elegant fragrance for every occasion.</p>
+
+            <div class="price">$59</div>
+
+            <button class="btn" onclick="addToCart('Zenvora Elite')">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                ZENVORA OUD
+            </div>
+
+            <h3>Zenvora Oud</h3>
+            <p>Rich oud with a luxurious touch.</p>
+
+            <div class="price">$69</div>
+
+            <button class="btn" onclick="addToCart('Zenvora Oud')">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<footer id="contact">
+    <p>© 2026 Zenvora. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+function viewProducts() {
+    document.getElementById("products").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function addToCart(productName) {
+    alert(productName + " added to cart!");
+}
+
+</script>
+
+</body>
+</html>
