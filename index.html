@@ -247,6 +247,11 @@ function viewContent(productName) {
     });
 }
 function addToCart(productName) {
+    fbq('track', 'AddToCart', {
+        content_name: productName,
+        content_type: 'product'
+    });
+
     alert(productName + " added to cart!");
 }
 
